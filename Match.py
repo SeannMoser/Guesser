@@ -31,6 +31,7 @@ def get_location_of_word(word, sentence, after_index=0):
 
 
 def match_sentences(sentences):
+    output = {}
     for i in range(len(sentences)):
         if i >= len(sentences):
             break
@@ -60,8 +61,9 @@ def match_sentences(sentences):
         percent = 1 - (get_word_count(large) / maxLength)
         temp = 1 - ((average_distance_off * 0.25) / distanceCount) / maxLength
         percent = percent * (temp)
-        print("{:0.2f}".format((percent)) + ":" + small_sent)
-
+        # print("{:0.2f}".format((percent)) + ":" + small_sent)
+        output[small_sent] = "{:0.2f}".format((percent))
+    return output
     # return percent
 
 
@@ -69,4 +71,15 @@ temp = ["Hello", "Seann How are you today?", "HI?", "What's up, How are you?", "
         "What the ..."]
 t = get_longer(temp)
 
-print(match_sentences(sentences=t))
+output = match_sentences(sentences=t)
+for i in output:
+    value = output[i]
+    print(value + ":" + i)
+'''0.00:hi?
+0.19:are
+0.19:how
+0.00:hello
+0.00:what the ...
+0.18:how was the test?
+0.57:what's up, how are you?
+0.99:seann how are you today?'''
