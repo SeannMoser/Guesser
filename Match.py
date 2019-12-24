@@ -68,7 +68,7 @@ def match_sentences(sentences):
     # return percent
 
 
-temp = ["Hello", "Seann How are you today?", "HI?", "What's up, How are you?", "How was the test?", "are", "How",
+temp = ["Hello", "Sean How are you today?", "HI?", "What's up, How are you?", "How was the test?", "are", "How",
         "What the ..."]
 t = get_longer(temp)
 
@@ -84,4 +84,4 @@ for i in output:
 0.00:what the ...
 0.18:how was the test?
 0.57:what's up, how are you?
-0.99:seann how are you today?'''
+0.99:sean how are you today?'''
